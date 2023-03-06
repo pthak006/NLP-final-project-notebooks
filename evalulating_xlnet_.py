@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1qGLGlSai2gp20l2ZN9y3O_mlJiuSLzAF
 """
 
-pip install transformers
+# pip install transformers
 
 # Load necessary libraries
 import pandas as pd
