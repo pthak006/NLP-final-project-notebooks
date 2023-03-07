@@ -14,6 +14,7 @@ import pandas as pd
 import torch
 from sklearn.model_selection import train_test_split
 from transformers import XLNetTokenizer, XLNetForSequenceClassification, AdamW
+from torch.utils.data import DataLoader, RandomSampler, TensorDataset
 
 import os
 
@@ -38,7 +39,7 @@ for dataset in ['train', 'test']:
             with open(f'{path}/{filename}', 'r') as file:
                 review = file.read()
             sentiment_value = 1 if sentiment == 'pos' else 0
-            imdb_df = imdb_df.append({'review': review, 'sentiment': sentiment_value}, ignore_index=True)
+            imdb_df = pd.concat([imdb_df, pd.DataFrame({'review': review, 'sentiment': sentiment_value}, index=[0])], ignore_index=True)
 
 # Count the number of instances
 num_instances = len(imdb_df)
