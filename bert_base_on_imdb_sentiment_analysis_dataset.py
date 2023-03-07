@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1c51pg34wXVSw97XwWBYTyhtdB5JCwUNI
 """
 
-!pip install transformers pandas torch
+# !pip install transformers pandas torch
 
 import pandas as pd
 import torch
@@ -222,21 +222,21 @@ test_acc /= len(test_loader.dataset)
 
 print(f'Test Accuracy: {test_acc:.3f}')
 
-import zipfile
+# import zipfile
 
-# Specify the path to save the model
-output_dir = './models/'
-if not os.path.exists(output_dir):
-    os.makedirs(output_dir)
+# # Specify the path to save the model
+# output_dir = './models/'
+# if not os.path.exists(output_dir):
+#     os.makedirs(output_dir)
 
-# Save the trained model to a file
-model_save_path = output_dir + 'bert_sentiment_analysis.pt'
-torch.save(model.state_dict(), model_save_path)
+# # Save the trained model to a file
+# model_save_path = output_dir + 'bert_sentiment_analysis.pt'
+# torch.save(model.state_dict(), model_save_path)
 
-# Zip the saved model and save to a file
-zip_save_path = output_dir + 'bert_sentiment_analysis.zip'
-with zipfile.ZipFile(zip_save_path, 'w', zipfile.ZIP_DEFLATED) as zip_file:
-    zip_file.write(model_save_path)
+# # Zip the saved model and save to a file
+# zip_save_path = output_dir + 'bert_sentiment_analysis.zip'
+# with zipfile.ZipFile(zip_save_path, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+#     zip_file.write(model_save_path)
 
-print('Trained model saved to:', zip_save_path)
+# print('Trained model saved to:', zip_save_path)
 
