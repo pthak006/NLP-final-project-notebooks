@@ -11,7 +11,7 @@ from nltk.corpus import stopwords
 nltk.download('wordnet')
 nltk.download('punkt')
 nltk.download('stopwords')
-nltk.download('omw-1.4')  # Add this line
+nltk.download('omw-1.4') 
 
 # define function to perform lemmatization
 def preprocess_and_lemmatize(text):
@@ -118,10 +118,10 @@ def train_model(model, train_input_ids, train_attention_masks, train_labels, tes
     model.to(device)
 
     train_data = torch.utils.data.TensorDataset(train_input_ids, train_attention_masks, train_labels)
-    train_loader = torch.utils.data.DataLoader(train_data, batch_size=8, shuffle=True)
+    train_loader = torch.utils.data.DataLoader(train_data, batch_size=16, shuffle=True)
 
     test_data = torch.utils.data.TensorDataset(test_input_ids, test_attention_masks, test_labels)
-    test_loader = torch.utils.data.DataLoader(test_data, batch_size=8, shuffle=False)
+    test_loader = torch.utils.data.DataLoader(test_data, batch_size=16, shuffle=False)
 
     loss_fn = torch.nn.CrossEntropyLoss()
     for epoch in range(num_epochs):
