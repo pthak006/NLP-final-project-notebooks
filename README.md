@@ -32,6 +32,8 @@
 
 15. **Evalulating_XLNet_lemmatization.ipynb**: ipynb file of the xlnet base cased run with lemmatized reviews. Contains both the code and the output.
 
+16. **BERT+UDA.ipynb** : ipynb file of the bert base uncased trained with UDA training approach. Contains both code and outputs. 
+
 ## Problems faced while performing the experiments
 
 
